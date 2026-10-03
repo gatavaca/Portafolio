@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9a3412" />
+      <stop offset="50%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#fb923c" />
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c1810" />
+      <stop offset="100%" stop-color="#1a0c06" />
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdd0a2" />
+      <stop offset="100%" stop-color="#f6b26b" />
+    </linearGradient>
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c2d12" />
+      <stop offset="100%" stop-color="#9a3412" />
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo circular -->
+  <circle cx="100" cy="100" r="95" fill="url(#bgGrad)" />
+
+  <!-- Cabello posterior -->
+  <path d="M50 90 C45 130 55 160 70 175 C80 160 80 140 80 120 Z" fill="url(#hairGrad)" />
+  <path d="M150 90 C155 130 145 160 130 175 C120 160 120 140 120 120 Z" fill="url(#hairGrad)" />
+
+  <!-- Ropa / Cuello -->
+  <path d="M40 190 C40 155 70 145 100 145 C130 145 160 155 160 190 Z" fill="url(#shirtGrad)" />
+  <path d="M88 145 L100 160 L112 145 Z" fill="url(#skinGrad)" />
+
+  <!-- Cuello -->
+  <rect x="88" y="120" width="24" height="28" rx="6" fill="url(#skinGrad)" />
+
+  <!-- Rostro -->
+  <ellipse cx="100" cy="95" rx="36" ry="42" fill="url(#skinGrad)" />
+
+  <!-- Cabello Frontal / Flequillo y ondas -->
+  <path d="M64 90 C64 60 75 48 100 48 C125 48 136 60 136 90 C136 78 126 65 100 68 C74 71 66 82 64 90 Z" fill="url(#hairGrad)" />
+  <path d="M64 85 C62 105 60 130 68 150 C72 135 70 115 72 95 Z" fill="url(#hairGrad)" />
+  <path d="M136 85 C138 105 140 130 132 150 C128 135 130 115 128 95 Z" fill="url(#hairGrad)" />
+
+  <!-- Ojos -->
+  <ellipse cx="85" cy="94" rx="4.5" ry="5.5" fill="#1e293b" />
+  <ellipse cx="115" cy="94" rx="4.5" ry="5.5" fill="#1e293b" />
+  <circle cx="83.5" cy="92.5" r="1.5" fill="#ffffff" />
+  <circle cx="113.5" cy="92.5" r="1.5" fill="#ffffff" />
+
+  <!-- Cejas -->
+  <path d="M78 85 Q85 82 92 85" stroke="#2c1810" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <path d="M108 85 Q115 82 122 85" stroke="#2c1810" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+  <!-- Sonrisa -->
+  <path d="M89 112 Q100 122 111 112" stroke="#b91c1c" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+  <!-- Lentes modernos (opcional, estilo tech y profesional) -->
+  <rect x="73" y="86" width="24" height="17" rx="5" fill="none" stroke="#9a3412" stroke-width="2.5" />
+  <rect x="103" y="86" width="24" height="17" rx="5" fill="none" stroke="#9a3412" stroke-width="2.5" />
+  <path d="M97 92 L103 92" stroke="#9a3412" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M73 91 L66 89" stroke="#9a3412" stroke-width="2" stroke-linecap="round" />
+  <path d="M127 91 L134 89" stroke="#9a3412" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Brillos sutiles -->
+  <circle cx="160" cy="50" r="3" fill="#ffffff" opacity="0.6" />
+  <circle cx="170" cy="65" r="1.5" fill="#ffffff" opacity="0.8" />
+</svg>

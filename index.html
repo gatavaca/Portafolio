@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Camila Hidalgo Páez | Cientista Político & Desarrolladora Front End">
+    <meta property="og:description" content="Portafolio y CV interactivo. Proyectos en Vue.js, JavaScript, SPA, Bootstrap y gestión de proyectos públicos.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>CV & Portafolio - Camila Hidalgo Páez</title>
+    
+    <!-- Favicon SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome 6 CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind Config & Estilos Custom -->
+    <script src="js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Datos & Lógica Reactiva Alpine.js -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body x-data="cvApp()" class="text-slate-300 antialiased min-h-screen py-12 px-4 sm:px-6 lg:px-8 relative overflow-x-hidden">
+    
+    <!-- Selector de Idioma (ES / EN) -->
+    <div class="fixed top-6 right-6 md:top-8 md:right-8 z-50 flex gap-1 p-1 bg-dark-card/90 backdrop-blur-md rounded-lg border border-dark-border shadow-xl">
+        <button @click="setLang('es')" :class="lang === 'es' ? 'bg-brand-DEFAULT/20 border border-brand-DEFAULT/40 text-brand-light shadow-sm' : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800 border border-transparent'" class="px-3 py-1.5 rounded-md text-xs font-bold transition-colors">ES</button>
+        <button @click="setLang('en')" :class="lang === 'en' ? 'bg-brand-DEFAULT/20 border border-brand-DEFAULT/40 text-brand-light shadow-sm' : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800 border border-transparent'" class="px-3 py-1.5 rounded-md text-xs font-bold transition-colors">EN</button>
+    </div>
+
+    <!-- Nebula Ambient Background Orbs -->
+    <div class="orb-warm"></div>
+    <div class="orb-coral"></div>
+
+    <div class="max-w-5xl mx-auto">
+        <div class="glass-panel rounded-[2rem] border border-dark-border overflow-hidden relative">
+            
+            <!-- Hero / Encabezado de Perfil -->
+            <div class="px-8 pt-12 pb-10 border-b border-dark-border relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-indigo-700 via-rose-400 to-indigo-500"></div>
+                
+                <div class="flex flex-col-reverse md:flex-row items-center md:items-start md:justify-between gap-8 relative z-10">
+                    <div class="text-center md:text-left flex-1">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 mb-3 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span>
+                            <span x-text="lang === 'es' ? 'Disponible para nuevos desafíos' : 'Available for opportunities'"></span>
+                        </div>
+
+                        <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight leading-tight">
+                            Camila <br class="hidden md:block">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-100 via-rose-300 to-indigo-400 glow-text">Hidalgo</span>
+                            <span class="text-brand-light/95 text-3xl md:text-5xl ml-1 font-medium tracking-normal">Páez</span>
+                        </h1>
+
+                        <h2 class="text-xl md:text-2xl text-rose-200 mt-3 font-semibold tracking-wide flex items-center justify-center md:justify-start gap-3">
+                            <i class="fa-solid fa-laptop-code text-brand-light"></i> <span x-text="data().header.role"></span>
+                        </h2>
+
+                        <p class="mt-4 text-stone-300 text-sm md:text-base leading-relaxed max-w-2xl mx-auto md:mx-0 font-light" x-text="data().header.bio"></p>
+                    </div>
+                    
+                    <!-- Avatar / Foto de Perfil -->
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-DEFAULT to-rose-500 rounded-full blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
+                        <img src="assets/img/avatar.jpg" alt="Camila Hidalgo Páez" class="relative w-32 h-32 md:w-40 md:h-40 object-cover rounded-full border-2 border-brand-light/50 shadow-[0_0_30px_rgba(251,113,133,0.35)] bg-dark-surface">
+                    </div>
+                </div>
+
+                <!-- Botones de Acción y Contacto Rápido -->
+                <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-3 text-sm">
+                    <!-- WhatsApp Directo -->
+                    <a href="https://wa.me/56982909495?text=Hola%20Camila,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo." target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2.5 px-5 py-2.5 bg-[#25d366] hover:bg-[#20ba59] text-white font-bold rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(37,211,102,0.35)] hover:shadow-[0_0_30px_rgba(37,211,102,0.55)] hover:-translate-y-1 w-full md:w-auto justify-center">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp (+56 9 8290 9495)</span>
+                    </a>
+
+                    <!-- Email -->
+                    <a href="mailto:cihidalg@uc.cl" class="group flex items-center gap-2.5 px-4 py-2.5 bg-dark-surface hover:bg-slate-800 border border-dark-border rounded-xl transition-all duration-300 hover:border-[#8b5cf6] hover:shadow-[0_0_15px_rgba(139,92,246,0.25)]">
+                        <i class="fa-solid fa-envelope w-5 text-brand-DEFAULT group-hover:text-[#8b5cf6] transition-colors"></i> 
+                        <span class="text-slate-300 group-hover:text-white transition-colors">cihidalg@uc.cl</span>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/cami-hidalgo/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2.5 px-4 py-2.5 bg-dark-surface hover:bg-slate-800 border border-dark-border rounded-xl transition-all duration-300 hover:border-[#0a66c2] hover:shadow-[0_0_15px_rgba(10,102,194,0.3)]">
+                        <i class="fa-brands fa-linkedin w-5 text-brand-DEFAULT group-hover:text-[#0a66c2] transition-colors"></i> 
+                        <span class="text-slate-300 group-hover:text-white transition-colors">LinkedIn</span>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/gatavaca" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2.5 px-4 py-2.5 bg-dark-surface hover:bg-slate-800 border border-dark-border rounded-xl transition-all duration-300 hover:border-[#e2e8f0] hover:shadow-[0_0_15px_rgba(226,232,240,0.15)]">
+                        <i class="fa-brands fa-github w-5 text-brand-DEFAULT group-hover:text-[#e2e8f0] transition-colors"></i> 
+                        <span class="text-slate-300 group-hover:text-white transition-colors">GitHub (@gatavaca)</span>
+                    </a>
+
+                    <!-- Ubicación -->
+                    <div class="flex items-center gap-2.5 px-4 py-2.5 bg-dark-surface border border-dark-border rounded-xl text-slate-400">
+                        <i class="fa-solid fa-location-dot w-5 text-brand-DEFAULT"></i> 
+                        <span>Longaví / Santiago, Chile</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Distribución Principal en 2 Columnas -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                
+                <!-- Columna Principal (Izquierda, 2 columnas) -->
+                <div class="lg:col-span-2 p-8 lg:border-r border-dark-border">
+                    
+                    <!-- Sección de Proyectos en GitHub -->
+                    <section class="mb-12">
+                        <h3 class="text-xl font-bold text-white flex items-center gap-3 mb-6">
+                            <div class="w-8 h-8 rounded-md bg-dark-surface border border-dark-border flex items-center justify-center text-brand-light">
+                                <i class="fa-solid fa-code text-sm"></i>
+                            </div>
+                            <span x-text="lang === 'es' ? 'Proyectos Publicados en GitHub' : 'Published GitHub Projects'"></span>
+                        </h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Proyectos de ancho regular -->
+                            <template x-for="proj in data().projects.filter(p => !p.fullWidth)">
+                                <a :href="proj.link" target="_blank" class="block p-4 rounded-xl bg-dark-surface border border-dark-border hover:border-brand-DEFAULT/50 hover:bg-slate-800 transition-all group shadow-lg">
+                                    <h5 class="text-white font-bold mb-1 flex items-center justify-between group-hover:text-brand-light transition-colors">
+                                        <span class="flex items-center gap-2">
+                                            <i class="fa-solid text-brand-DEFAULT" :class="proj.icon"></i>
+                                            <span x-text="proj.name"></span>
+                                        </span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-brand-light"></i>
+                                    </h5>
+                                    <p class="text-xs text-slate-400 mt-2 leading-relaxed" x-text="proj.desc"></p>
+                                </a>
+                            </template>
+
+                            <!-- Proyectos de ancho completo -->
+                            <template x-for="proj in data().projects.filter(p => p.fullWidth)">
+                                <a :href="proj.link" target="_blank" class="block p-4 rounded-xl bg-dark-surface border border-dark-border hover:border-brand-DEFAULT/50 hover:bg-slate-800 transition-all group sm:col-span-2 shadow-lg">
+                                    <h5 class="text-white font-bold mb-1 flex items-center justify-between group-hover:text-brand-light transition-colors">
+                                        <span class="flex items-center gap-2">
+                                            <i class="fa-solid text-brand-DEFAULT" :class="proj.icon"></i>
+                                            <span x-text="proj.name"></span>
+                                        </span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-brand-light"></i>
+                                    </h5>
+                                    <p class="text-xs text-slate-400 mt-2 leading-relaxed" x-text="proj.desc"></p>
+                                </a>
+                            </template>
+                        </div>
+                        
+                        <!-- Ecosistema / Enlaces a los Repositorios de Código -->
+                        <div class="mt-6 pt-5 border-t border-dark-border">
+                            <h5 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3" x-text="data().ecosystem.title"></h5>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <template x-for="link in data().ecosystem.links">
+                                    <a :href="link.url" target="_blank" class="px-3 py-1.5 bg-dark-surface border border-dark-border hover:border-brand-DEFAULT/40 hover:text-brand-light rounded-lg transition-colors flex items-center gap-1.5">
+                                        <i class="fa-brands fa-github text-[11px] text-brand-DEFAULT"></i>
+                                        <span x-text="link.name"></span>
+                                    </a>
+                                </template>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Sección de Experiencia Laboral -->
+                    <section>
+                        <h3 class="text-xl font-bold text-white flex items-center gap-3 mb-6">
+                            <div class="w-8 h-8 rounded-md bg-dark-surface border border-dark-border flex items-center justify-center text-brand-light">
+                                <i class="fa-solid fa-briefcase text-sm"></i>
+                            </div>
+                            <span x-text="data().experience.title"></span>
+                        </h3>
+                        
+                        <template x-for="exp in data().experience.items">
+                            <div class="mb-10 relative pl-8 border-l-2 border-dark-border" :class="exp.isCurrent ? '' : 'opacity-85 hover:opacity-100 transition-opacity duration-300'">
+                                <div class="absolute w-4 h-4 rounded-full -left-[9px]" :class="exp.isCurrent ? 'bg-dark-card border-2 border-rose-400 shadow-[0_0_12px_rgba(251,113,133,0.55)] top-1' : 'w-3 h-3 bg-stone-600 -left-[7px] top-1.5'"></div>
+                                <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+                                    <h4 class="font-bold text-white" :class="exp.isCurrent ? 'text-xl' : 'text-lg'" x-text="exp.title"></h4>
+                                    <span class="text-xs font-mono mt-2 md:mt-0" :class="exp.isCurrent ? 'text-brand-light bg-brand-DEFAULT/10 px-2 py-1 rounded-md border border-brand-DEFAULT/20' : 'text-slate-500'" x-text="exp.date"></span>
+                                </div>
+                                <p class="text-sm font-medium mb-4 uppercase tracking-wider" :class="exp.isCurrent ? 'text-brand-light' : 'text-slate-500'" x-text="exp.subtitle"></p>
+                                <ul class="list-disc list-outside ml-5 space-y-2 text-sm leading-relaxed" :class="exp.isCurrent ? 'text-slate-300 marker:text-brand-DEFAULT/60' : 'text-slate-400 marker:text-slate-600'">
+                                    <template x-for="bullet in exp.bullets">
+                                        <li x-html="bullet"></li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </template>
+                    </section>
+                </div>
+
+                <!-- Columna Lateral (Derecha, 1 columna) -->
+                <div class="p-8 bg-dark-bg/40">
+                    
+                    <!-- Stack Tecnológico & Destrezas -->
+                    <section class="mb-10">
+                        <h3 class="text-xl font-bold text-white flex items-center gap-3 mb-6">
+                            <div class="w-8 h-8 rounded-md bg-dark-surface border border-dark-border flex items-center justify-center text-brand-light">
+                                <i class="fa-solid fa-layer-group text-sm"></i>
+                            </div>
+                            <span x-text="data().stack.title"></span>
+                        </h3>
+                        <div class="space-y-4">
+                            <template x-for="cat in data().stack.categories">
+                                <div class="p-4 rounded-xl bg-dark-surface border border-dark-border hover:border-brand-dark transition-colors">
+                                    <h4 class="text-xs font-bold text-brand-light uppercase tracking-widest mb-3 flex items-center gap-2">
+                                        <i class="fa-solid" :class="cat.icon"></i> <span x-text="cat.name"></span>
+                                    </h4>
+                                    <div class="flex flex-wrap gap-1.5">
+                                        <template x-for="item in cat.items">
+                                            <span class="px-2.5 py-1 bg-brand-DEFAULT/10 text-brand-light border border-brand-DEFAULT/30 rounded text-xs font-medium" x-text="item"></span>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </section>
+
+                    <!-- Educación & Certificaciones -->
+                    <section>
+                        <h3 class="text-xl font-bold text-white flex items-center gap-3 mb-6">
+                            <div class="w-8 h-8 rounded-md bg-dark-surface border border-dark-border flex items-center justify-center text-brand-light">
+                                <i class="fa-solid fa-graduation-cap text-sm"></i>
+                            </div>
+                            <span x-text="data().education.title"></span>
+                        </h3>
+                        <ul class="space-y-4">
+                            <template x-for="edu in data().education.items">
+                                <li class="border-b border-dark-border pb-3 last:border-0 last:pb-0">
+                                    <template x-if="edu.link">
+                                        <a :href="edu.link" target="_blank" rel="noopener noreferrer" class="group/edu block hover:bg-slate-800/40 p-2 -mx-2 rounded-xl transition-all border border-transparent hover:border-brand-DEFAULT/30">
+                                            <div class="flex items-center justify-between gap-2">
+                                                <h4 class="text-sm font-bold text-slate-200 group-hover/edu:text-brand-light flex items-center gap-2">
+                                                    <template x-if="edu.icon">
+                                                        <i :class="edu.icon" class="text-brand-DEFAULT text-xs"></i>
+                                                    </template>
+                                                    <span x-text="edu.name"></span>
+                                                </h4>
+                                                <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-brand-DEFAULT opacity-60 group-hover/edu:opacity-100 transition-opacity"></i>
+                                            </div>
+                                            <p class="text-xs text-brand-DEFAULT mt-0.5" x-text="edu.detail"></p>
+                                        </a>
+                                    </template>
+                                    <template x-if="!edu.link">
+                                        <div>
+                                            <h4 class="text-sm font-bold text-slate-200" x-text="edu.name"></h4>
+                                            <p class="text-xs text-brand-DEFAULT mt-0.5" x-text="edu.detail"></p>
+                                        </div>
+                                    </template>
+                                </li>
+                            </template>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+            
+            <!-- Pie de Página (Footer con Firma y Créditos) -->
+            <footer class="border-t border-dark-border bg-dark-surface/30 px-8 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-500">
+                    <div class="flex flex-col items-center md:items-start gap-1">
+                        <p class="text-slate-500 text-[11px] font-bold uppercase tracking-widest">
+                            &copy; 2026 Camila Hidalgo Páez &bull; <span x-text="data().footer.copyright"></span>
+                        </p>
+                        <p class="text-slate-400 text-[10px] tracking-wider" x-text="data().footer.desc"></p>
+                    </div>
+                    
+                    <div class="flex items-center gap-3">
+                        <span class="text-slate-400 text-[11px] font-bold uppercase tracking-wider">By</span>
+                        <a href="https://github.com/gatavaca" target="_blank" class="no-underline group relative transition-all duration-300 hover:-translate-y-0.5">
+                            <span class="camila-signature text-3xl font-normal transition-all duration-500">
+                                Camila Hidalgo
+                            </span>
+                            <span class="absolute -bottom-1 left-0 w-0 h-px bg-[#fb7185] transition-all duration-500 group-hover:w-full shadow-[0_0_10px_#fb7185]"></span>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

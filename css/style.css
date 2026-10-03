@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
+
+body { 
+    background-color: #090e1a; 
+}
+
+/* Ambient floating orbs for Electric Indigo & Sunset Coral (Bicolor High-Contrast) */
+.orb-warm {
+    position: fixed;
+    top: -15%;
+    left: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, transparent 60%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(95px);
+    animation: floatWarm 15s ease-in-out infinite alternate;
+}
+
+.orb-coral {
+    position: fixed;
+    bottom: -20%;
+    right: -10%;
+    width: 70vw;
+    height: 70vw;
+    background: radial-gradient(circle, rgba(251, 113, 133, 0.13) 0%, transparent 60%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(105px);
+    animation: floatCoral 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatWarm {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(5%, 8%); }
+}
+@keyframes floatCoral {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-5%, -10%); }
+}
+
+/* UI Effects */
+.glass-panel {
+    background: rgba(16, 23, 42, 0.84);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 35px rgba(99, 102, 241, 0.08);
+}
+
+.glow-text {
+    text-shadow: 0 0 25px rgba(251, 113, 133, 0.5);
+}
+
+.logo-mask {
+    -webkit-mask-image: radial-gradient(circle, black 55%, transparent 72%);
+    mask-image: radial-gradient(circle, black 55%, transparent 72%);
+}
+
+/* Footer Signature */
+.camila-signature {
+    font-family: 'Luxurious Script', cursive;
+    color: #fb7185;
+    display: inline-block;
+    transform: rotate(-2deg);
+    text-shadow: 0 0 14px rgba(251, 113, 133, 0.4);
+}
+
+.group:hover .camila-signature {
+    transform: rotate(0deg) scale(1.1);
+    text-shadow: 0 0 20px rgba(254, 205, 211, 0.7);
+    color: #fecdd3;
+}
