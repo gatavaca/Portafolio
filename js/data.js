@@ -3,7 +3,7 @@ const cvData = {
         header: {
             role: "Cientista Político & Desarrolladora Front End",
             bio: "Profesional de la Pontificia Universidad Católica de Chile con postgrado en Políticas Públicas (USACH) y especialización en Desarrollo Web Front End. Más de 8 años de trayectoria articulando proyectos comunitarios, análisis de datos y soporte técnico en telecomunicaciones, aplicados a la creación de interfaces web modernas, reactivas y orientadas al usuario.",
-            pdfBtn: "Descargar CV Completo (PDF)",
+            pdfBtn: "CV",
             pdfLink: "assets/CV_Camila_Hidalgo.pdf"
         },
         projects: [
@@ -167,7 +167,7 @@ const cvData = {
         header: {
             role: "Political Scientist & Front End Developer",
             bio: "Graduate from the Pontifical Catholic University of Chile with postgraduate studies in Public Policy (USACH) and specialization in Front End Web Development. Over 8 years of experience combining community project management, data analysis, and technical telecom support with modern, responsive, and user-centric web applications.",
-            pdfBtn: "Download Full Resume (PDF)",
+            pdfBtn: "CV",
             pdfLink: "assets/CV_Camila_Hidalgo.pdf"
         },
         projects: [

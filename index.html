@@ -81,6 +81,12 @@
                         <span>WhatsApp (+56 9 8290 9495)</span>
                     </a>
 
+                    <!-- Visualizar CV en Línea -->
+                    <a :href="data().header.pdfLink" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2.5 px-4 py-2.5 bg-dark-surface hover:bg-slate-800 border border-dark-border rounded-xl transition-all duration-300 hover:border-brand-coral hover:shadow-[0_0_15px_rgba(251,113,133,0.35)] hover:-translate-y-0.5" title="Visualizar Curriculum Vitae en línea">
+                        <i class="fa-solid fa-file-pdf w-5 text-brand-coral group-hover:scale-110 transition-transform"></i> 
+                        <span class="text-slate-300 group-hover:text-white transition-colors font-bold" x-text="data().header.pdfBtn"></span>
+                    </a>
+
                     <!-- Email -->
                     <a href="mailto:cihidalg@uc.cl" class="group flex items-center gap-2.5 px-4 py-2.5 bg-dark-surface hover:bg-slate-800 border border-dark-border rounded-xl transition-all duration-300 hover:border-[#8b5cf6] hover:shadow-[0_0_15px_rgba(139,92,246,0.25)]">
                         <i class="fa-solid fa-envelope w-5 text-brand-DEFAULT group-hover:text-[#8b5cf6] transition-colors"></i> 
